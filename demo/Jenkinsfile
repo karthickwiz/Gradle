@@ -30,11 +30,11 @@ stage('Sonarqube analysis') {
          bat "${scannerHome}/bin/sonar-scanner.bat\
          -Dsonar.projectKey=clsd\
          -Dsonar.projectName=clsd\
-         -Dsonar.jacoco.reportPaths=${WORKSPACE}/demo/build/jacoco/test.exec \
-         -Dsonar.junit.reportPaths=${WORKSPACE}/demo/build/test-results/test \
-         -Dsonar.java.binaries=${WORKSPACE}/demo/build/classes/java/main \
-         -Dsonar.sources=${WORKSPACE}/demo/src \
-         -Dsonar.tests=${WORKSPACE}/demo/src/test \
+         -Dsonar.jacoco.reportPaths=${WORKSPACE}/build/jacoco/test.exec \
+         -Dsonar.junit.reportPaths=${WORKSPACE}/build/test-results/test \
+         -Dsonar.java.binaries=${WORKSPACE}/build/classes/java/main \
+         -Dsonar.sources=${WORKSPACE}/src \
+         -Dsonar.tests=${WORKSPACE}/src/test \
          -Dsonar.test.inclusions=**/*Test.java"
     }
     }
