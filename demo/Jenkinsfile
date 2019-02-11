@@ -35,7 +35,7 @@ stage('Sonarqube analysis') {
          -Dsonar.java.binaries=${WORKSPACE}/build/classes/java/main \
          -Dsonar.sources=${WORKSPACE}/src \
          -Dsonar.tests=${WORKSPACE}/src/test \
-         -Dsonar.test.inclusions=**/*Test.java"
+         -Dsonar.analysis.mode=preview"
     }
     }
         }
