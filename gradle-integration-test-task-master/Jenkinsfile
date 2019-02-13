@@ -30,8 +30,10 @@ stage('Sonarqube analysis') {
          -Dsonar.projectKey=clsd\
          -Dsonar.projectName=clsd\
          -Dsonar.sources=./gradle-integration-test-task-master/src/main/java\
-         -Dsonar.tests=./\
-         -Dsonar.test.inclusions=**/*test*/**"
+         -Dsonar.junit.reportPaths=./gradle-integration-test-task-master/build/reports/tests\
+         -Dsonar.tests=./gradle-integration-test-task-master/src/test\
+         -Dsonar.test.inclusions=**/*Test.java"
+
     }
     }
         }
