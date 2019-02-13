@@ -29,9 +29,9 @@ stage('Sonarqube analysis') {
          bat "${scannerHome}/bin/sonar-scanner.bat\
          -Dsonar.projectKey=clsd\
          -Dsonar.projectName=clsd\
-         -Dsonar.sources=./demo/src/main/java/com/example/demo\
+         -Dsonar.sources=./gradle-integration-test-task-master/src/main/java\
          -Dsonar.tests=./\
-         -Dsonar.test.inclusions=**/*test*/**" 
+         -Dsonar.test.inclusions=**/*test*/**"
     }
     }
         }
