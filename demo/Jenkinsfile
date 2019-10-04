@@ -6,7 +6,7 @@ pipeline {
 stage('Gradle') {
     steps {
    echo "Gradle..."
-       sh './gradlew clean build'
+       sh './gradlew clean test --no-daemon' //run a gradle task
         
     }
         }
