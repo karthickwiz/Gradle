@@ -6,8 +6,13 @@ pipeline {
 stage('Gradle') {
     steps {
    echo "Gradle..."
-        sh 'cd /${WORKSPACE}/demo'
-       sh './gradlew clean test --no-daemon' //run a gradle task
+         
+        sh """#!/bin/bash
+               cd ${WORKSPACE}/demo
+               gradle clean test --no-daemon
+               
+                """
+        
         
     }
         }
