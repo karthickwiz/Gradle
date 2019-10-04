@@ -1,42 +1,20 @@
 pipeline {
     agent any
      stages {
-        stage('Initialize') {
-            steps {
-                echo 'setting...'   
-                 bat 'set'
-            }
-        }
+       
        stage('build') {
           steps {                                
-             bat 'echo building....'
-             bat 'gradle build'
-               bat 'echo builded....'    
+             
             
           }
        }
     
-stage('Sonarqube analysis') {
+stage('Gradle') {
     steps {
-   echo "sonar report"
-  script {
-          // requires SonarQube Scanner 2.8+
-          scannerHome = tool 'sonar'
-        }
-  
-       
-     withSonarQubeEnv('clsd') {
-         echo scannerHome
-         bat "${scannerHome}/bin/sonar-scanner.bat\
-         -Dsonar.projectKey=clsd\
-         -Dsonar.projectName=clsd\
-         -Dsonar.jacoco.reportPaths=${WORKSPACE}/build/jacoco/test.exec \
-         -Dsonar.junit.reportPaths=${WORKSPACE}/build/test-results/test \
-         -Dsonar.java.binaries=${WORKSPACE}/build/classes/java/main \
-         -Dsonar.sources=${WORKSPACE}/src \
-         -Dsonar.tests=${WORKSPACE}/src/test \
-         -Dsonar.analysis.mode=preview"
-    }
+   echo "Gradle..."
+        sh 'source /etc/profile.d/gradle.sh'
+        sh 'gradle -v'
+   
     }
         }
     }
