@@ -6,7 +6,7 @@ pipeline {
 stage('Gradle') {
     steps {
    echo "Gradle..."
-        sh 'source /etc/profile.d/gradle.sh'
+     //   sh 'source /etc/profile.d/gradle.sh'
         sh 'gradle -v'
    
     }
