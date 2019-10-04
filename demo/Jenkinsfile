@@ -6,7 +6,7 @@ pipeline {
 stage('Gradle') {
     steps {
    echo "Gradle..."
-        echo ${workspace}
+        sh  'echo ${workspace}'
          sh 'gradle clean build'
    
     }
