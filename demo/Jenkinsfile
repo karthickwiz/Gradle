@@ -3,15 +3,16 @@ pipeline {
      stages {
        
        
-stage('Gradle') {
+stage('Build') {
     steps {
-   echo "Gradle..."
+   echo "Environment is: DEV"
+        echo "Service name is: GSRG"
          
-        sh """#!/bin/bash
-               cd ${WORKSPACE}/demo
-               gradle clean test --no-daemon
+    //    sh """#!/bin/bash
+  //             cd ${WORKSPACE}/demo
+  //             gradle clean test --no-daemon
                
-                """
+  //              """
         
         
     }
